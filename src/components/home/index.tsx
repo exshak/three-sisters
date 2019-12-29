@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 import Slider from 'react-slick'
@@ -27,7 +27,10 @@ const Home = () => {
       gallery: allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
         nodes {
           childImageSharp {
-            fluid(quality: 80, maxWidth: 300, maxHeight: 200) {
+            fluid(
+              quality: 80
+              maxWidth: 1920 # duotone: { highlight: "#000000", shadow: "#000000", opacity: 30 }
+            ) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -38,6 +41,7 @@ const Home = () => {
 
   const settings = {
     dots: true,
+    fade: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -52,15 +56,26 @@ const Home = () => {
     <div>
       <Slider {...settings}>
         {backgrounds.nodes.map(node => (
-          <div>
+          <div style={{ position: 'relative' }}>
+            {/* <h1 style={{ zIndex: 1, color: 'white', position: 'absolute' }}>
+              Three Sisters
+            </h1> */}
             <Img fluid={node.childImageSharp.fluid} />
           </div>
         ))}
       </Slider>
       <div css={GalleryStyles}>
         {gallery.nodes.map(node => (
-          <div>
-            <Img fluid={node.childImageSharp.fluid} />
+          <div style={{ margin: '0 auto', padding: '8px' }}>
+            <Link to={node.childImageSharp.fluid.src}>
+              <Img
+                fluid={node.childImageSharp.fluid}
+                style={{
+                  height: 200,
+                  width: 290,
+                }}
+              />
+            </Link>
           </div>
         ))}
       </div>
@@ -71,6 +86,10 @@ const Home = () => {
 export default Home
 
 const GalleryStyles = css`
-  display: grid;
-  grid-template: 1fr 1fr 1fr 1fr;
+  /* display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
+  margin: 40px 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
 `

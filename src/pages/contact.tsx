@@ -5,5 +5,6 @@ import SEO from '../components/layout/seo'
 export default () => (
   <Layout>
     <SEO title="Contact" />
+    {/* <Contact /> */}
   </Layout>
 )

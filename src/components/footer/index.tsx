@@ -10,6 +10,7 @@ const Footer = ({ siteTitle, siteAuthor }) => {
     <footer>
       <div css={FooterStyles}>
         <hr />
+        <h5 style={{ margin: '20px', fontWeight: 'bold' }}>Follow Us</h5>
         <ul css={SocialStyles}>
           {social.map((link: any) => (
             <SocialLink {...link} />
@@ -33,7 +34,7 @@ const SocialStyles = css`
   display: flex;
   justify-content: center;
   list-style: none;
-  margin: 40px;
+  margin: 0 0 40px;
 `
 
 const CopyrightStyles = css`
