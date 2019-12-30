@@ -17,7 +17,8 @@ const Footer = ({ siteTitle, siteAuthor }) => {
           ))}
         </ul>
         <div css={CopyrightStyles}>
-          Copyright © {new Date().getFullYear()}, {siteTitle} by {siteAuthor}
+          Copyright © {new Date().getFullYear()}, {siteTitle} site by{' '}
+          {siteAuthor}
         </div>
       </div>
     </footer>

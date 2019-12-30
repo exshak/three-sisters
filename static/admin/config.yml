@@ -1,0 +1,41 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'products'
+    label: 'Products'
+    folder: 'src/products'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Featured Image', name: 'featuredimage', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  # prettier-ignore
+  # - label: "Home Section"
+  #   name: "sections"
+  #   widget: "list"
+  #   types:
+  #     - label: "Carousel"
+  #       name: "carousel"
+  #       widget: object
+  #       fields:
+  #         - {label: Header, name: header, widget: string, default: "Image Gallery"}
+  #         - {label: Template, name: template, widget: string, default: "carousel.html"}
+  #         - label: Images
+  #           name: images
+  #           widget: list
+  #           field: {label: Image, name: image, widget: image}
+  #     - label: "Spotlight"
+  #       name: "spotlight"
+  #       widget: object
+  #       fields:
+  #         - {label: Header, name: header, widget: string, default: "Spotlight"}
+  #         - {label: Template, name: template, widget: string, default: "spotlight.html"}
+  #         - {label: Text, name: text, widget: text, default: "Hello World"}

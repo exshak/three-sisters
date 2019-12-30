@@ -32,12 +32,14 @@ const Header = ({ siteTitle }) => {
   return (
     <header>
       <div css={HeaderStyles}>
-        {/* <h1 css={TitleStyles}> */}
-        <TitleLogo isScrolled={navbarColor}>
-          <Link to="/">{siteTitle}</Link>
-        </TitleLogo>
-        {/* </h1> */}
-        <NavBar isScrolled={navbarColor} />
+        <div style={{ margin: '0 auto', maxWidth: '1300px' }}>
+          {/* <h1 css={TitleStyles}> */}
+          <TitleLogo isScrolled={navbarColor}>
+            <Link to="/">{siteTitle}</Link>
+          </TitleLogo>
+          {/* </h1> */}
+          <NavBar isScrolled={navbarColor} />
+        </div>
       </div>
     </header>
   )
@@ -55,6 +57,7 @@ export default Header
 
 const HeaderStyles = theme => css`
   background: ${theme.colors.white};
+  /* background: white; */
   text-align: center;
   text-transform: uppercase;
   position: fixed;

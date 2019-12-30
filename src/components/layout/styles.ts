@@ -30,10 +30,11 @@ export const globalStyle = css`
   }
 
   body {
-    /* background-color: ${theme.colors.white}; */
+    background-color: ${theme.colors.white};
     /* color: ${theme.colors.black}; */
     font-family: 'Source Sans Pro', sans-serif;
-    /* margin: 0 40px; */
+    margin: 0 auto;
+    max-width: 1300px;
   }
 
   a {
@@ -43,6 +44,10 @@ export const globalStyle = css`
 
   .active {
     font-weight: 600;
+  }
+
+  .slick-slider {
+    max-width: 100vw;
   }
 
   footer {
@@ -55,4 +60,5 @@ export const Main = styled.main`
   /* color: ${theme.colors.white}; */
   min-height: 100vh;
   margin-top: 150px;
+  margin: 150px auto 0px;
 `
