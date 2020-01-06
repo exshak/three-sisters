@@ -1,15 +1,16 @@
 module.exports = {
   siteTitle: 'Three Sisters',
-  siteDescription: 'Cafe & Bakery',
-  siteDescriptionLong: 'Coffee Shop & Bakery',
+  siteDescription: 'Handcrafted Art & Calligraphy',
+  siteDescriptionLong: 'Handcrafted Art & Calligraphy',
   siteShortName: 'Three Sisters',
   siteAuthor: 'exshak',
-  siteUrl: '',
+  siteUrl: 'https://threesisterss.com/',
   pathPrefix: '/',
   backgroundColor: '#f7f7f7',
   themeColor: '#efdbca',
   favicon: 'src/assets/logo.png',
   siteLogo: '',
+  googleAnalyticsID: 'UA-XXXXXXXX-X',
   siteNav: [
     { to: '/', text: 'Home' },
     { to: '/shop', text: 'Shop' },
@@ -17,9 +18,9 @@ module.exports = {
     { to: '/contact', text: 'Contact' },
   ],
   siteContact: {
-    address: 'Oakland, CA 94621',
-    email: 'contact@cafelina.com',
-    phone: '(123) 456-7890',
+    address: '',
+    email: '',
+    phone: '',
   },
   socialLinks: [
     { site: 'facebook', link: 'https://github.com/exshak' },

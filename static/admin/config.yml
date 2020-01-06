@@ -5,6 +5,7 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+# prettier-ignore
 collections:
   - name: 'products'
     label: 'Products'
@@ -12,11 +13,21 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Collection', name: 'collection', widget: 'select',
+          options:
+            [
+              { label: 'Left', value: 'left' },
+              { label: 'Right', value: 'right' },
+              { label: 'Middle', value: 'middle' },
+            ],
+        }
+      - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Featured Image', name: 'featuredimage', widget: 'image' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Gallery Images', name: 'galleryimages', widget: 'image' }
+      # - { label: 'Slug', name: 'slug', widget: 'string' }
+      # - { label: 'Body', name: 'body', widget: 'markdown' }
   # prettier-ignore
   # - label: "Home Section"
   #   name: "sections"

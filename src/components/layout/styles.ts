@@ -34,7 +34,7 @@ export const globalStyle = css`
     /* color: ${theme.colors.black}; */
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1280px;
   }
 
   a {
@@ -58,7 +58,7 @@ export const globalStyle = css`
 export const Main = styled.main`
   /* background-color: ${theme.colors.black}; */
   /* color: ${theme.colors.white}; */
-  min-height: 100vh;
+  /* min-height: 100vh; */
   margin-top: 150px;
   margin: 150px auto 0px;
 `

@@ -29,12 +29,20 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-emotion',
     'gatsby-plugin-netlify-cms',
+    'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-source-instagram',
       options: {
         username: 'threeesistersss',
         // access_token: 'a valid access token',
         // instagram_id: 'your instagram_business_account id',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: config.googleAnalyticsID,
+        head: true,
       },
     },
     {

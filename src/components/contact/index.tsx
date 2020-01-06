@@ -1,31 +1,29 @@
 import { css } from '@emotion/core'
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import React from 'react'
 import FormInput from '../common/formInputs'
 
 const Contact = () => {
-  const { contact } = useStaticQuery(graphql`
-    query Contact {
-      contact: file(relativePath: {}) {
-        childImageSharp {
-          fluid(
-            quality: 80
-            maxWidth: 1920 # duotone: { highlight: "#000000", shadow: "#000000", opacity: 30 }
-          ) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
+  // const { contact } = useStaticQuery(graphql`
+  //   query Contact {
+  //     contact: file(relativePath: { eq: "assets/logo.png" }) {
+  //       childImageSharp {
+  //         fluid(
+  //           quality: 80
+  //           maxWidth: 1920 # duotone: { highlight: "#000000", shadow: "#000000", opacity: 30 }
+  //         ) {
+  //           ...GatsbyImageSharpFluid_withWebp
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <div css={ContactStyles}>
-      <Img
+      {/* <Img
         fluid={contact.childImageSharp.fluid}
         style={{ height: '600px', width: '600px' }}
-      />
+      /> */}
       <form action="" method="POST" css={FormStyles}>
         <FormInput type="text" name="name" label="Name" required />
         <FormInput type="text" name="phone" label="Phone" required />

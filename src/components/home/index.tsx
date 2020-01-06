@@ -165,7 +165,7 @@ const InstagramStyles = css`
 grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); */
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
+  justify-content: center;
 `
 
 const Overlay = styled.div`
@@ -193,7 +193,7 @@ const Title = styled.div`
 const Item = styled.a`
   position: relative;
   overflow: hidden;
-  margin: 8px;
+  margin: 7px;
 
   > div img {
     transition: all 0.3s ease 0s !important;
