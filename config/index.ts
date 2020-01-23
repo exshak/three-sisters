@@ -4,11 +4,11 @@ module.exports = {
   siteDescriptionLong: 'Handcrafted Art & Calligraphy',
   siteShortName: 'Three Sisters',
   siteAuthor: 'exshak',
-  siteUrl: 'https://threesisterss.com/',
+  siteUrl: 'https://threesisterss.com',
   pathPrefix: '/',
   backgroundColor: '#f7f7f7',
   themeColor: '#efdbca',
-  favicon: 'src/assets/logo.png',
+  favicon: 'src/assets/icons/logo.png',
   siteLogo: '',
   googleAnalyticsID: 'UA-XXXXXXXX-X',
   siteNav: [

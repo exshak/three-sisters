@@ -2,33 +2,100 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/img
-public_folder: /img
+# media_folder: static/images
+# public_folder: /images
+
+media_library:
+  name: uploadcare
+  config:
+    publicKey: a73a170cb5cdef662983
+    multiple: false
+    tabs: file camera url facebook gdrive
+    effects: crop,rotate,enhance,grayscale
+    imageShrink: 2000x2000
+    previewStep: true
+    clearable: true
 
 # prettier-ignore
 collections:
-  - name: 'products'
-    label: 'Products'
-    folder: 'src/products'
+  - label: Pages
+    name: pages
+    delete: false
+    files:
+      - label: Home Page
+        name: home-page
+        file: content/pages/home.md
+        fields:
+          - { label: Template, name: template, widget: hidden, default: HomePage }
+          - { label: Slug, name: slug, widget: hidden, default: '' }
+          - label: Carousel
+            name: carousel
+            widget: list
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Alt, name: alt, widget: string }
+          - { label: Featured Title, name: featuredTitle, widget: string }
+          - label: Featured
+            name: featured
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: relation, collection: Products, searchFields: [title], valueField: title }
+              - { label: Image, name: image, widget: relation, collection: Products, searchFields: [title], valueField: featuredimage }
+          - { label: Instagram Title, name: instagramTitle, widget: string }
+      - label: Shop Page
+        name: shop-page
+        file: content/pages/shop.md
+        fields:
+          - { label: Template, name: template, widget: hidden, default: ShopPage }
+          - { label: Slug, name: slug, widget: hidden, default: shop }
+  - label: Products
+    name: products
+    folder: content/products
+    slug: {{slug}}
     create: true
-    slug: '{{slug}}'
     fields:
-      - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Collection', name: 'collection', widget: 'select',
-          options:
-            [
-              { label: 'Left', value: 'left' },
-              { label: 'Right', value: 'right' },
-              { label: 'Middle', value: 'middle' },
-            ],
-        }
-      - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Featured Image', name: 'featuredimage', widget: 'image' }
-      - { label: 'Gallery Images', name: 'galleryimages', widget: 'image' }
-      # - { label: 'Slug', name: 'slug', widget: 'string' }
-      # - { label: 'Body', name: 'body', widget: 'markdown' }
-  # prettier-ignore
+      - { label: Template, name: template, widget: hidden, default: Products }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Title, name: title, widget: string }
+      - { label: Price, name: price, widget: number, valueType: float, default: 10 }
+      - { label: Description, name: description, widget: text }
+      - { label: Featured Image, name: featuredImage, widget: image }
+      - { label: Gallery Images, name: galleryImages, widget: image, multiple: true }
+      - label: Collections
+        name: collections
+        widget: list
+        required: false
+        fields:
+          - { label: Collection, name: collection, widget: relation, collection: Collections, searchFields: [title], valueField: title }
+      - { label: Status, name: status, widget: select, options: [Published, Featured, Draft], default: Published }
+  - label: Collections
+    name: collections
+    folder: content/collections
+    slug: {{slug}}
+    create: true
+    fields:
+      - { label: Template, name: template, widget: hidden, default: Collections }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Featured Image, name: featuredImage, widget: image, required: false }
+  # - label: Settings
+  #   name: settings
+  #   delete: false
+  #   files:
+  #     - label: Global Settings
+  #       name: global-settings
+  #       file: content/settings/global.yml
+  #       fields:
+  #         - { label: Site Title, name: siteTitle, widget: string }
+  #         - { label: Site Url, name: siteUrl, widget: string, required: false }
+  #         - { label: Site Description, name: siteDescription, widget: text, required: false }
+  #         - { label: Google Analytics Tracking Id, name: googleTrackingId, widget: string, required: false }
+  #         - label: Social Media Card
+  #           name: socialMediaCard
+  #           widget: object
+  #           fields:
+  #             - { label: Image, name: image, widget: image, required: false }
   # - label: "Home Section"
   #   name: "sections"
   #   widget: "list"
