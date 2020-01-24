@@ -11,12 +11,6 @@ module.exports = {
   favicon: 'src/assets/icons/logo.png',
   siteLogo: '',
   googleAnalyticsID: 'UA-XXXXXXXX-X',
-  siteNav: [
-    { to: '/', text: 'Home' },
-    { to: '/shop', text: 'Shop' },
-    { to: '/about', text: 'About' },
-    { to: '/contact', text: 'Contact' },
-  ],
   siteContact: {
     address: '',
     email: '',

@@ -2,19 +2,19 @@ backend:
   name: git-gateway
   branch: master
 
-# media_folder: static/images
-# public_folder: /images
+media_folder: static/images
+public_folder: /images
 
-media_library:
-  name: uploadcare
-  config:
-    publicKey: a73a170cb5cdef662983
-    multiple: false
-    tabs: file camera url facebook gdrive
-    effects: crop,rotate,enhance,grayscale
-    imageShrink: 2000x2000
-    previewStep: true
-    clearable: true
+# media_library:
+#   name: uploadcare
+#   config:
+#     publicKey: a73a170cb5cdef662983
+#     multiple: false
+#     tabs: file camera url facebook gdrive
+#     effects: crop,rotate,enhance,grayscale
+#     imageShrink: 2000x2000
+#     previewStep: true
+#     clearable: true
 
 # prettier-ignore
 collections:
@@ -51,7 +51,7 @@ collections:
   - label: Products
     name: products
     folder: content/products
-    slug: {{slug}}
+    slug: '{{slug}}'
     create: true
     fields:
       - { label: Template, name: template, widget: hidden, default: Products }
@@ -71,7 +71,7 @@ collections:
   - label: Collections
     name: collections
     folder: content/collections
-    slug: {{slug}}
+    slug: '{{slug}}'
     create: true
     fields:
       - { label: Template, name: template, widget: hidden, default: Collections }
