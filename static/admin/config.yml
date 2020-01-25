@@ -2,19 +2,19 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/images
-public_folder: /images
+# media_folder: static/images
+# public_folder: /images
 
-# media_library:
-#   name: uploadcare
-#   config:
-#     publicKey: a73a170cb5cdef662983
-#     multiple: false
-#     tabs: file camera url facebook gdrive
-#     effects: crop,rotate,enhance,grayscale
-#     imageShrink: 2000x2000
-#     previewStep: true
-#     clearable: true
+media_library:
+  name: uploadcare
+  config:
+    publicKey: a73a170cb5cdef662983
+    multiple: false
+    tabs: file camera url facebook gdrive
+    effects: crop,rotate,enhance,grayscale
+    imageShrink: 2000x2000
+    previewStep: true
+    clearable: true
 
 # prettier-ignore
 collections:
@@ -26,7 +26,7 @@ collections:
         name: home-page
         file: content/pages/home.md
         fields:
-          - { label: Template, name: template, widget: hidden, default: HomePage }
+          - { label: Template, name: template, widget: hidden, default: homePage }
           - { label: Slug, name: slug, widget: hidden, default: '' }
           - label: Carousel
             name: carousel
@@ -39,14 +39,14 @@ collections:
             name: featured
             widget: list
             fields:
-              - { label: Title, name: title, widget: relation, collection: Products, searchFields: [title], valueField: title }
-              - { label: Image, name: image, widget: relation, collection: Products, searchFields: [title], valueField: featuredimage }
+              # - { label: Title, name: title, widget: relation, collection: Products, searchFields: [title], valueField: title }
+              # - { label: Image, name: image, widget: relation, collection: Products, searchFields: [title], valueField: featuredImage }
           - { label: Instagram Title, name: instagramTitle, widget: string }
       - label: Shop Page
         name: shop-page
         file: content/pages/shop.md
         fields:
-          - { label: Template, name: template, widget: hidden, default: ShopPage }
+          - { label: Template, name: template, widget: hidden, default: shopPage }
           - { label: Slug, name: slug, widget: hidden, default: shop }
   - label: Products
     name: products
@@ -54,9 +54,10 @@ collections:
     slug: '{{slug}}'
     create: true
     fields:
-      - { label: Template, name: template, widget: hidden, default: Products }
+      - { label: Template, name: template, widget: hidden, default: product }
       - { label: Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
+      - { label: Body, name: body, widget: markdown }
       - { label: Price, name: price, widget: number, valueType: float, default: 10 }
       - { label: Description, name: description, widget: text }
       - { label: Featured Image, name: featuredImage, widget: image }
@@ -74,7 +75,7 @@ collections:
     slug: '{{slug}}'
     create: true
     fields:
-      - { label: Template, name: template, widget: hidden, default: Collections }
+      - { label: Template, name: template, widget: hidden, default: shopPage }
       - { label: Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: text, required: false }

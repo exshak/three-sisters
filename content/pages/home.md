@@ -19,7 +19,7 @@ featured:
   - image: https://cdn.shopify.com/s/files/1/0894/8008/products/A4_Frame_Mockup_cd60a846-2e29-4120-81b1-dd0b2a23ada3_300x300.jpg?v=1564353578
     title: Etched Bottle
 instagramTitle: Instagram Title Example
-section1: >-
+section: >-
   ## This is a container component
 
   A sem vel nec sodales mi vivamus senectus sed potenti a parturient nascetur
