@@ -2,9 +2,6 @@ backend:
   name: git-gateway
   branch: master
 
-# media_folder: static/images
-# public_folder: /images
-
 media_library:
   name: uploadcare
   config:
@@ -28,6 +25,7 @@ collections:
         fields:
           - { label: Template, name: template, widget: hidden, default: homePage }
           - { label: Slug, name: slug, widget: hidden, default: '' }
+          - { label: Title, name: title, widget: string }
           - label: Carousel
             name: carousel
             widget: list
@@ -42,12 +40,61 @@ collections:
               # - { label: Title, name: title, widget: relation, collection: Products, searchFields: [title], valueField: title }
               # - { label: Image, name: image, widget: relation, collection: Products, searchFields: [title], valueField: featuredImage }
           - { label: Instagram Title, name: instagramTitle, widget: string }
+          - label: Meta
+            name: meta
+            widget: object
+            required: false
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Description, name: description, widget: text, required: false }
+
       - label: Shop Page
         name: shop-page
         file: content/pages/shop.md
         fields:
           - { label: Template, name: template, widget: hidden, default: shopPage }
           - { label: Slug, name: slug, widget: hidden, default: shop }
+          - { label: Title, name: title, widget: string }
+          - label: Meta
+            name: meta
+            widget: object
+            required: false
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Description, name: description, widget: text, required: false }
+
+      - label: About Page
+        name: about-page
+        file: content/pages/about.md
+        fields:
+          - { label: Template, name: template, widget: hidden, default: aboutPage }
+          - { label: Slug, name: slug, widget: hidden, default: about }
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: markdown }
+          - label: Meta
+            name: meta
+            widget: object
+            required: false
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Description, name: description, widget: text, required: false }
+
+      - label: Contact Page
+        name: contact-page
+        file: content/pages/contact.md
+        fields:
+          - { label: Template, name: template, widget: hidden, default: contactPage }
+          - { label: Slug, name: slug, widget: hidden, default: contact }
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: markdown }
+          - label: Meta
+            name: meta
+            widget: object
+            required: false
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - { label: Description, name: description, widget: text, required: false }
+
   - label: Products
     name: products
     folder: content/products
@@ -57,8 +104,8 @@ collections:
       - { label: Template, name: template, widget: hidden, default: product }
       - { label: Date, name: date, widget: datetime }
       - { label: Title, name: title, widget: string }
+      - { label: Price, name: price, widget: string, default: '$10.00 CAD' }
       - { label: Body, name: body, widget: markdown }
-      - { label: Price, name: price, widget: number, valueType: float, default: 10 }
       - { label: Description, name: description, widget: text }
       - { label: Featured Image, name: featuredImage, widget: image }
       - { label: Gallery Images, name: galleryImages, widget: image, multiple: true }
@@ -69,6 +116,7 @@ collections:
         fields:
           - { label: Collection, name: collection, widget: relation, collection: Collections, searchFields: [title], valueField: title }
       - { label: Status, name: status, widget: select, options: [Published, Featured, Draft], default: Published }
+
   - label: Collections
     name: collections
     folder: content/collections
@@ -80,23 +128,25 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: text, required: false }
       - { label: Featured Image, name: featuredImage, widget: image, required: false }
-  # - label: Settings
-  #   name: settings
-  #   delete: false
-  #   files:
-  #     - label: Global Settings
-  #       name: global-settings
-  #       file: content/settings/global.yml
-  #       fields:
-  #         - { label: Site Title, name: siteTitle, widget: string }
-  #         - { label: Site Url, name: siteUrl, widget: string, required: false }
-  #         - { label: Site Description, name: siteDescription, widget: text, required: false }
-  #         - { label: Google Analytics Tracking Id, name: googleTrackingId, widget: string, required: false }
-  #         - label: Social Media Card
-  #           name: socialMediaCard
-  #           widget: object
-  #           fields:
-  #             - { label: Image, name: image, widget: image, required: false }
+
+  - label: Settings
+    name: settings
+    delete: false
+    files:
+      - label: Global Settings
+        name: global-settings
+        file: content/settings/global.yml
+        fields:
+          - { label: Site Title, name: siteTitle, widget: string }
+          - { label: Site Url, name: siteUrl, widget: string, required: false }
+          - { label: Site Description, name: siteDescription, widget: text, required: false }
+          - { label: Google Analytics Tracking Id, name: googleTrackingId, widget: string, required: false }
+          - label: Social Media Card
+            name: socialMediaCard
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, required: false }
+
   # - label: "Home Section"
   #   name: "sections"
   #   widget: "list"
