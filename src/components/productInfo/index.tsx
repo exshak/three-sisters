@@ -80,7 +80,7 @@ const ProductInfo = ({
           <Content source={body} />
         </Body>
         <Form
-          name={name}
+          name={title}
           action="/"
           method="POST"
           data-netlify="true"
