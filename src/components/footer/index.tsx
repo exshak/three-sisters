@@ -1,43 +1,31 @@
-import { css } from '@emotion/core'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { SiteMetadata } from '../common/siteMetadata'
 import SocialLink from '../common/socialLink'
+import { SiteFooter, SocialList, SubTitle } from './styles'
 
-const Footer = ({ siteTitle, siteAuthor }) => {
+const Footer = ({ siteTitle }) => {
   const { social } = SiteMetadata()
 
   return (
-    <footer>
-      <div css={FooterStyles}>
-        <hr />
-        <h5 style={{ margin: '20px', fontWeight: 'bold' }}>Follow Us</h5>
-        <ul css={SocialStyles}>
-          {social.map((link: any) => (
-            <SocialLink {...link} />
-          ))}
-        </ul>
-        <div css={CopyrightStyles}>
-          Copyright © {new Date().getFullYear()}, {siteTitle} site by{' '}
-          {siteAuthor}
-        </div>
-      </div>
-    </footer>
+    <SiteFooter>
+      <SubTitle>Follow Us</SubTitle>
+      <SocialList>
+        {social.map((link, i) => (
+          <SocialLink key={'link-' + i} {...link} />
+        ))}
+      </SocialList>
+      Copyright © {new Date().getFullYear()}, {siteTitle}
+    </SiteFooter>
   )
 }
 
+Footer.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Footer.defaultProps = {
+  siteTitle: ``,
+}
+
 export default Footer
-
-const FooterStyles = css`
-  text-align: center;
-`
-
-const SocialStyles = css`
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0 0 40px;
-`
-
-const CopyrightStyles = css`
-  padding: 20px;
-`

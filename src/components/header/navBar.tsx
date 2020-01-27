@@ -1,74 +1,90 @@
-import { css } from '@emotion/core'
-import styled from '@emotion/styled'
+import { Location } from '@reach/router'
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useState } from 'react'
+import { FaBars, FaTimes } from 'react-icons/fa'
+import LogoSVG from '../../assets/icons/logo-full.svg'
 import { SiteMetadata } from '../common/siteMetadata'
 import SocialLink from '../common/socialLink'
+import {
+  Button,
+  Container,
+  CustomLink,
+  Group,
+  GroupLinks,
+  GroupParent,
+  Logo,
+  Nav,
+  NavLinks,
+  NavLogo,
+  Social,
+} from './styles'
 
-const NavBar = ({ isScrolled }) => {
-  const { title, navigation, social } = SiteMetadata()
+const NavBar = ({ scroll, subNav }) => {
+  const { title, social } = SiteMetadata()
+  const [active, setActive] = useState(false)
+  const [activeSubNav, setActiveSubNav] = useState('')
+
+  const handleMenuToggle = () => setActive(!active)
+
+  const handleLinkClick = () => active && handleMenuToggle()
+
+  const toggleSubNav = subNav =>
+    setActiveSubNav(activeSubNav === subNav ? false : subNav)
+
+  const NavLink = ({ to, children, ...props }) => (
+    <CustomLink
+      to={to}
+      activeClassName="active"
+      onClick={handleLinkClick}
+      {...props}
+    >
+      {children}
+    </CustomLink>
+  )
 
   return (
-    <div css={HeaderStyles}>
-      <div css={LogoStyles}>
-        <SiteLogo isScrolled={isScrolled}>{title}</SiteLogo>
-      </div>
-      <div css={NavStyles}>
-        {navigation.map((item, key) => (
-          <li css={NavLinkStyles} className="nav-item">
-            <Link
-              key={key}
-              to={item.to}
-              className="nav-link"
-              activeClassName="active"
-            >
-              {item.text}
-            </Link>
-          </li>
-        ))}
-      </div>
-      <div css={SocialStyles}>
-        {social.map((link: any) => (
-          <SocialLink {...link} />
-        ))}
-      </div>
-    </div>
+    <Nav active={active}>
+      <Container scroll={scroll}>
+        <NavLogo scroll={scroll}>
+          <Link to="/" onClick={handleLinkClick}>
+            <Logo src={LogoSVG} alt={title} />
+          </Link>
+        </NavLogo>
+        <NavLinks>
+          <NavLink to="/">Home</NavLink>
+          <Group subnav={activeSubNav}>
+            <GroupParent onClick={() => toggleSubNav('products')}>
+              Shop
+            </GroupParent>
+            <GroupLinks>
+              <NavLink to="/shop/" sublink="true">
+                All Products
+              </NavLink>
+              {subNav.products.map(({ slug, title }, i) => (
+                <NavLink to={slug} key={'subnav-link-' + i} sublink="true">
+                  {title}
+                </NavLink>
+              ))}
+            </GroupLinks>
+          </Group>
+          <NavLink to="/about/">About</NavLink>
+          <NavLink to="/contact/">Contact</NavLink>
+          <Social>
+            {social.map((link, i) => (
+              <SocialLink key={link.site + i} {...link} />
+            ))}
+          </Social>
+        </NavLinks>
+        <Button onClick={handleMenuToggle}>
+          {active ? <FaTimes /> : <FaBars />}
+        </Button>
+      </Container>
+    </Nav>
   )
 }
 
-export default NavBar
-
-const HeaderStyles = css`
-  display: flex;
-  list-style: none;
-`
-
-const LogoStyles = css`
-  align-items: center;
-  display: flex;
-  /* padding-left: 20px; */
-  width: 20%;
-`
-
-const SiteLogo = styled.div`
-  opacity: ${props => (!props.isScrolled ? 0 : 1)};
-  transition: all 0.5s ease-in-out;
-`
-
-const NavStyles = css`
-  display: flex;
-  justify-content: center;
-  width: 60%;
-`
-
-const SocialStyles = css`
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  width: 20%;
-`
-
-const NavLinkStyles = css`
-  letter-spacing: 0.1em;
-  padding: 0.5rem 1rem;
-`
+export default ({ scroll, subNav }) => (
+  <Location>
+    {route => <NavBar scroll={scroll} subNav={subNav} {...route} />}
+  </Location>
+)

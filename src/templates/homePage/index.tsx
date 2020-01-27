@@ -35,7 +35,7 @@ export const HomePageTemplate = ({
 
 // Export Default HomePage for front-end
 const HomePage = ({ data: { page, instagram } }) => (
-  <Layout meta="Home">
+  <Layout meta={page.frontmatter.meta.title || page.frontmatter.title}>
     <HomePageTemplate {...page} {...page.frontmatter} instagram={instagram} />
   </Layout>
 )
@@ -45,7 +45,9 @@ export default HomePage
 export const pageQuery = graphql`
   query HomePage($id: String!) {
     page: markdownRemark(id: { eq: $id }) {
+      ...Meta
       frontmatter {
+        title
         carousel {
           image
           alt

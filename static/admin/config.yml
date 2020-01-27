@@ -5,7 +5,7 @@ backend:
 media_library:
   name: uploadcare
   config:
-    publicKey: a73a170cb5cdef662983
+    publicKey: f8f360c9efdce53e4af8
     multiple: false
     tabs: file camera url facebook gdrive
     effects: crop,rotate,enhance,grayscale
@@ -37,8 +37,8 @@ collections:
             name: featured
             widget: list
             fields:
-              # - { label: Title, name: title, widget: relation, collection: Products, searchFields: [title], valueField: title }
-              # - { label: Image, name: image, widget: relation, collection: Products, searchFields: [title], valueField: featuredImage }
+              - { label: Title, name: title, widget: relation, collection: Products, searchFields: [title], valueField: title }
+              - { label: Image, name: image, widget: relation, collection: Products, searchFields: [title], valueField: featuredImage }
           - { label: Instagram Title, name: instagramTitle, widget: string }
           - label: Meta
             name: meta

@@ -1,18 +1,16 @@
 import { css } from '@emotion/core'
 import React from 'react'
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaEnvelope, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
-const SocialLink = ({ link, site }) => {
-  return (
-    <li css={SocialStyles}>
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        {site === 'facebook' && <FaFacebookF css={LinkStyles} />}
-        {site === 'instagram' && <FaInstagram css={LinkStyles} />}
-        {site === 'twitter' && <FaTwitter css={LinkStyles} />}
-      </a>
-    </li>
-  )
-}
+const SocialLink = ({ link, site }) => (
+  <li css={SocialStyles}>
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      {site === 'facebook' && <FaFacebookF css={LinkStyles} />}
+      {site === 'instagram' && <FaInstagram css={LinkStyles} />}
+      {site === 'email' && <FaEnvelope css={LinkStyles} />}
+    </a>
+  </li>
+)
 
 export default SocialLink
 

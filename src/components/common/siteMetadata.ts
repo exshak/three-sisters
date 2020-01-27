@@ -9,19 +9,12 @@ export const SiteMetadata = () => {
           description
           slogan
           author
-          navigation {
-            to
-            text
-          }
           contact {
             address
             email
             phone
           }
           social {
-            # facebook
-            # instagram
-            # twitter
             site
             link
           }
@@ -32,3 +25,14 @@ export const SiteMetadata = () => {
 
   return site.siteMetadata
 }
+
+export const query = graphql`
+  fragment Meta on MarkdownRemark {
+    frontmatter {
+      meta {
+        title
+        description
+      }
+    }
+  }
+`

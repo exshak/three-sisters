@@ -3,19 +3,19 @@ template: homePage
 slug: ''
 title: Home Page
 carousel:
-  - image: https://i.imgur.com/4Qt4M1B.jpg
-    alt: yellow rope image
-  - image: https://i.imgur.com/4Qt4M1B.jpg
-    alt: umbrellas
-  - image: https://i.imgur.com/4Qt4M1B.jpg
-    alt: yellow ice cream
+  - image: https://images.squarespace-cdn.com/content/v1/591cd05915d5dbf23bf660c0/1554075266121-WWPYDVQ3MMGPMOC3CGNH/ke17ZwdGBToddI8pDm48kNLmoMgP9-PoGL3pTpvfmf97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UZn9JnVc0xDeoNGVJ3wrjE4Nx_EhhKi4CB_8Hn-bafWShA1iIgJHGOspu562nPK3kQ/Intro+Flaylay+Banner.jpg?format=2500w
+    alt: Three Sisters
+  - image: https://images.squarespace-cdn.com/content/v1/591cd05915d5dbf23bf660c0/1554075266121-WWPYDVQ3MMGPMOC3CGNH/ke17ZwdGBToddI8pDm48kNLmoMgP9-PoGL3pTpvfmf97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UZn9JnVc0xDeoNGVJ3wrjE4Nx_EhhKi4CB_8Hn-bafWShA1iIgJHGOspu562nPK3kQ/Intro+Flaylay+Banner.jpg?format=2500w
+    alt: Three Sisters
+  - image: https://images.squarespace-cdn.com/content/v1/591cd05915d5dbf23bf660c0/1554075266121-WWPYDVQ3MMGPMOC3CGNH/ke17ZwdGBToddI8pDm48kNLmoMgP9-PoGL3pTpvfmf97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UZn9JnVc0xDeoNGVJ3wrjE4Nx_EhhKi4CB_8Hn-bafWShA1iIgJHGOspu562nPK3kQ/Intro+Flaylay+Banner.jpg?format=2500w
+    alt: Three Sisters
 featuredTitle: Featured Title
 featured:
-  - image: https://cdn.shopify.com/s/files/1/0894/8008/products/arabi_1024x1024@2x.jpg?v=1564353572
+  - image: https://ucarecdn.com/817d26ed-c8b6-454d-9caf-60d0a00919a6/
     title: Etched Bottle
-  - image: https://cdn.shopify.com/s/files/1/0894/8008/products/A4_Frame_Mockup_2ccfccc9-724a-4adb-9fe5-482dba21230f_300x300.jpg?v=1564353550
+  - image: https://ucarecdn.com/662c1da9-36ea-455d-811a-abb8fcf9cc65/
     title: Etched Bottle
-  - image: https://cdn.shopify.com/s/files/1/0894/8008/products/A4_Frame_Mockup_cd60a846-2e29-4120-81b1-dd0b2a23ada3_300x300.jpg?v=1564353578
+  - image: https://ucarecdn.com/5ca0d720-8ddd-4a92-bd0a-ad4d177a6d41/
     title: Etched Bottle
 featuredImage: https://ucarecdn.com/df0dc650-6938-412f-aefb-2019d2349e13/
 section: >-
@@ -27,6 +27,6 @@ section: >-
   This paragraph has been copied from a program that automatically generates paragraphs like this. It is useful for web designers to use placeholder text so they can easily see what different fonts look like on a realistic paragraph.
 instagramTitle: Instagram Title
 meta:
-  title: ''
-  description: ''
+  title: Home Page
+  description: Home Page
 ---

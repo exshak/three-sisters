@@ -8,7 +8,7 @@ module.exports = {
   pathPrefix: '/',
   backgroundColor: '#f7f7f7',
   themeColor: '#efdbca',
-  favicon: 'src/assets/icons/logo.png',
+  favicon: 'src/assets/icons/favicon.png',
   siteLogo: '',
   googleAnalyticsID: 'UA-XXXXXXXX-X',
   siteContact: {
@@ -19,6 +19,6 @@ module.exports = {
   socialLinks: [
     { site: 'facebook', link: 'https://github.com/exshak' },
     { site: 'instagram', link: 'https://github.com/exshak' },
-    { site: 'twitter', link: 'https://github.com/exshak' },
+    { site: 'email', link: 'sisterssthree@gmail.com' },
   ],
 }
