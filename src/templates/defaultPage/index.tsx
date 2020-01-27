@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import React, { Fragment } from 'react'
 import Container from '../../components/common/container'
 import Content from '../../components/common/content'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout'
 
 // Export Template for use in CMS preview
 export const DefaultPageTemplate = ({ title, body }) => (
