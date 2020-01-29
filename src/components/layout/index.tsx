@@ -7,6 +7,7 @@ import Footer from '../footer'
 import Header from '../header'
 import SEO from './seo'
 import { globalStyle, Main, theme } from './styles'
+import './test.css'
 
 const Layout = ({ meta, children }) => {
   const { title } = SiteMetadata()

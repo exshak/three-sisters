@@ -17,8 +17,8 @@ module.exports = {
     phone: '',
   },
   socialLinks: [
-    { site: 'facebook', link: 'https://github.com/exshak' },
-    { site: 'instagram', link: 'https://github.com/exshak' },
+    { site: 'facebook', link: 'https://facebook.com/threeesistersss' },
+    { site: 'instagram', link: 'https://instagram.com/threeesistersss' },
     { site: 'email', link: 'sisterssthree@gmail.com' },
   ],
 }

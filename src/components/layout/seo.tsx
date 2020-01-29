@@ -50,7 +50,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link href="https://ucarecdn.com" rel="preconnect" crossorigin />
+      <link href="https://ucarecdn.com" rel="dns-prefetch" />
+    </Helmet>
   )
 }
 
