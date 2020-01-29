@@ -98,4 +98,4 @@ exports.onCreateNode = ({ actions: { createNodeField }, getNode, node }) => {
   }
 }
 
-// module.exports.resolvableExtensions = () => ['.json']
+module.exports.resolvableExtensions = () => ['.json']

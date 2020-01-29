@@ -1,3 +1,5 @@
+import createCache from '@emotion/cache'
+import { CacheProvider } from '@emotion/core'
 import CMS from 'netlify-cms-app'
 import uploadcare from 'netlify-cms-media-library-uploadcare'
 import React from 'react'
@@ -8,6 +10,21 @@ import { HomePageTemplate } from '../templates/homePage'
 import { ProductTemplate } from '../templates/product'
 import { ShopPageTemplate } from '../templates/shopPage'
 import './utils'
+
+class CSSInjector extends React.Component {
+  constructor() {
+    super()
+    const iframe = document.getElementsByTagName('iframe')[0]
+    const iframeHead = iframe.contentDocument.head
+    this.cache = createCache({ container: iframeHead })
+  }
+
+  render() {
+    return (
+      <CacheProvider value={this.cache}>{this.props.children}</CacheProvider>
+    )
+  }
+}
 
 CMS.registerMediaLibrary(uploadcare)
 
@@ -23,29 +40,43 @@ if (
 }
 
 CMS.registerPreviewTemplate('home-page', ({ entry }) => (
-  <HomePageTemplate {...entry.toJS().data} />
+  <CSSInjector>
+    <HomePageTemplate {...entry.toJS().data} />
+  </CSSInjector>
 ))
 
 CMS.registerPreviewTemplate('shop-page', ({ entry }) => (
-  <ShopPageTemplate {...entry.toJS().data} />
+  <CSSInjector>
+    <ShopPageTemplate {...entry.toJS().data} />
+  </CSSInjector>
 ))
 
 CMS.registerPreviewTemplate('collections', ({ entry }) => (
-  <ShopPageTemplate {...entry.toJS().data} />
+  <CSSInjector>
+    <ShopPageTemplate {...entry.toJS().data} />
+  </CSSInjector>
 ))
 
 CMS.registerPreviewTemplate('products', ({ entry }) => (
-  <ProductTemplate {...entry.toJS().data} />
+  <CSSInjector>
+    <ProductTemplate {...entry.toJS().data} />
+  </CSSInjector>
 ))
 
 CMS.registerPreviewTemplate('about-page', ({ entry }) => (
-  <AboutPageTemplate {...entry.toJS().data} />
+  <CSSInjector>
+    <AboutPageTemplate {...entry.toJS().data} />
+  </CSSInjector>
 ))
 
 CMS.registerPreviewTemplate('contact-page', ({ entry }) => (
-  <ContactPageTemplate {...entry.toJS().data} />
+  <CSSInjector>
+    <ContactPageTemplate {...entry.toJS().data} />
+  </CSSInjector>
 ))
 
 CMS.registerPreviewTemplate('infoPages', ({ entry }) => (
-  <DefaultPageTemplate {...entry.toJS().data} />
+  <CSSInjector>
+    <DefaultPageTemplate {...entry.toJS().data} />
+  </CSSInjector>
 ))

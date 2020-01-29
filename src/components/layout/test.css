@@ -1,0 +1,75 @@
+:root {
+  --primary: #00c2bd;
+  --secondary: #00c2bd;
+  --text: #222222;
+  --background: #fbfbfb;
+  --black: #000;
+  --white: #ffffff;
+  --offwhite: #f9f9f9;
+  --lightGrey: whitesmoke;
+  --darkGrey: #272727;
+  --borderRadius: 2px;
+  --font-primary: 'Open Sans', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-primary);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 20px 30px;
+  -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 600px) {
+    padding: 0 20px;
+  }
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
+::selection {
+  background: rgba(0, 194, 189, 0.6);
+}
+
+.active {
+  font-weight: 600 !important;
+}
+
+.slick-slide div {
+  height: 400px;
+}

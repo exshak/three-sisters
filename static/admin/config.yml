@@ -37,8 +37,9 @@ collections:
             name: featured
             widget: list
             fields:
-              - { label: Title, name: title, widget: relation, collection: Products, searchFields: [title], valueField: title }
-              - { label: Image, name: image, widget: relation, collection: Products, searchFields: [title], valueField: featuredImage }
+              - { label: Title, name: title, widget: relation, collection: products, searchFields: [title], valueField: title }
+              - { label: Image, name: image, widget: relation, collection: products, searchFields: [title], valueField: featuredImage }
+          - { label: Section, name: section, widget: markdown }
           - { label: Instagram Title, name: instagramTitle, widget: string }
           - label: Meta
             name: meta
@@ -114,7 +115,7 @@ collections:
         widget: list
         required: false
         fields:
-          - { label: Collection, name: collection, widget: relation, collection: Collections, searchFields: [title], valueField: title }
+          - { label: Collection, name: collection, widget: relation, collection: collections, searchFields: [title], valueField: title }
       - { label: Status, name: status, widget: select, options: [Published, Featured, Draft], default: Published }
 
   - label: Collections

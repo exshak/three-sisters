@@ -12,11 +12,11 @@ carousel:
 featuredTitle: Featured Title
 featured:
   - image: https://ucarecdn.com/817d26ed-c8b6-454d-9caf-60d0a00919a6/
-    title: Etched Bottle
+    title: Glass Etched Bottle
   - image: https://ucarecdn.com/662c1da9-36ea-455d-811a-abb8fcf9cc65/
-    title: Etched Bottle
+    title: Glass Etched Bottle
   - image: https://ucarecdn.com/5ca0d720-8ddd-4a92-bd0a-ad4d177a6d41/
-    title: Etched Bottle
+    title: Glass Etched Bottle
 featuredImage: https://ucarecdn.com/df0dc650-6938-412f-aefb-2019d2349e13/
 section: >-
   ## Section Title
