@@ -17,7 +17,7 @@ export const FormInputContainer = styled.input`
   min-width: 150px;
   padding: 0.5rem 1rem;
   transition: all 0.2s ease;
-  width: ${props => (props.full ? '300px' : '100%')};
+  width: ${({ full }) => (full ? '300px' : '100%')};
 
   &:focus {
     border-color: var(--black);

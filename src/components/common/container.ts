@@ -1,17 +1,18 @@
 import styled from '@emotion/styled'
 
 const Container = styled.section`
-  border-bottom: ${props => (props.borderless ? 'none' : '1px solid #f1f1f1')};
-  max-width: ${props => (props.skinny ? '888px' : 'auto')};
+  border-bottom: ${({ borderless }) =>
+    borderless ? 'none' : '1px solid #f1f1f1'};
+  max-width: ${({ skinny }) => (skinny ? '888px' : 'auto')};
   margin: 0 auto;
-  padding: ${props => (props.thin ? '5rem 0 0' : '5rem 0')};
+  padding: ${({ thin }) => (thin ? '5rem 0 0' : '5rem 0')};
   width: 100%;
 
   :last-child {
     border: 0;
   }
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     padding: 1rem 0;
     width: 100%;
   }

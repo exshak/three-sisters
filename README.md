@@ -1,97 +1,86 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://threesisterss.com">
+    <img src="./src/assets/icons/logo-full.svg" alt="Three Sisters" width="400" />
   </a>
 </p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+<p align="center">
+  <a href="https://github.com/exshak/three-sisters">
+    <img src="https://img.shields.io/badge/build-passing-success.svg" alt="build: status"/>
+  </a>
+  <a href="https://emotion.sh">
+    <img src="https://img.shields.io/badge/style-%F0%9F%92%85%20emotion-orange.svg?colorB=daa357&colorA=db748e" alt="style: emotion"/>
+  </a>
+  <a href="https://netlifycms.org">
+    <img src="https://img.shields.io/badge/cms-netlify--cms-00bbcc.svg" alt="cms: netlify"/>
+  </a>
+  <a href="https://uploadcare.com">
+    <img src="https://img.shields.io/badge/cdn-uploadcare-00cc99.svg" alt="cdn: uploadcare"/>
+  </a>
+  <a href="https://app.netlify.com/sites/threesisters/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/a793b103-cacf-4624-8de6-864fa29ba446/deploy-status" alt="netlify: status"/>
+  </a>
+</p>
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+---
 
-## 🚀 Quick start
+Three Sisters is an online store for handcrafted art and calligraphy, built with Gatsby and Netlify's CMS API using JWT authentication for the Admin interface (UI). It can be configured extensibly with real-time previews and seamless images using Uploadcare's CDN API. The store can search by products and sort by categories with dynamic content loading and page navigation.
 
-1.  **Create a Gatsby site.**
+_Have a great idea to contribute? Make a pull request, I'm always looking for ways to improve [Three Sisters](https://threesisterss.com)._
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+## Features
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+- Carousel & Gallery
+- Forms with reCAPTCHA
+- Google Analytics Tracking
+- Product Search & Collection Sort
+- Instagram Feed Integration
+- Mailchimp Integration
+- Uploadcare CDN API
+- Netlify CD, CMS
+- PWA
+- SEO
 
-1.  **Start developing.**
+## Quick Start
 
-    Navigate into your new site’s directory and start it up.
+Clone repository, install dependencies, start server
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+```sh
+git clone https://github.com/exshak/three-sisters.git
+cd three-sisters
+yarn                   # npm install
+yarn start             # npm start
+# to deploy
+yarn build             # npm build
+```
 
-1.  **Open the source code and start editing!**
+Visit site at _`localhost:8000`_
 
-    Your site is now running at `http://localhost:8000`!
+## Built With
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+- [React](https://reactjs.org)
+- [Gatsby](https://gatsbyjs.org)
+- [Emotion](https://emotion.sh)
+- [React Slick](https://react-slick.neostack.com)
+- [Netlify CMS](https://netlifycms.org)
+- [Uploadcare](https://uploadcare.com)
+- [Netlify](https://netlify.com)
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+#### Folder Structure
 
-## 🧐 What's inside?
+```sh
+.
+├── config            # SEO manifest
+├── content           # CMS collections
+├── src
+│   ├── assets        # Icons and images
+│   ├── cms           # CustomCMS preview
+│   ├── components    # Javascript and css
+│   ├── pages         # 404 page and routes
+│   └── templates     # Site pages templates
+└── static            # Netlifys CMS settings
+```
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+## License
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+[MIT](./LICENSE)

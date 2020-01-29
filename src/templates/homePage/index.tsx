@@ -47,6 +47,7 @@ export const pageQuery = graphql`
     page: markdownRemark(id: { eq: $id }) {
       ...Meta
       frontmatter {
+        template
         title
         carousel {
           image
@@ -70,6 +71,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          caption
           original
           localFile {
             childImageSharp {

@@ -51,7 +51,7 @@ export const Grid = styled.div`
     }
   }
 
-  @media screen and ${props => props.theme.breakpoints.tablet} {
+  @media screen and (max-width: 600px) {
     display: block;
     margin: 0 auto;
     margin-bottom: 1rem;

@@ -25,8 +25,8 @@ const invertedButtonStyles = css`
   }
 `
 
-const getButtonStyles = props =>
-  props.inverted ? invertedButtonStyles : buttonStyles
+const getButtonStyles = ({ inverted }) =>
+  inverted ? invertedButtonStyles : buttonStyles
 
 export const CustomButtonContainer = styled.button`
   border-radius: var(--borderRadius);
@@ -40,7 +40,7 @@ export const CustomButtonContainer = styled.button`
   padding: 1rem 5rem;
   text-transform: uppercase;
   transition: all 0.2s ease;
-  width: ${props => (props.full ? '100%' : 'auto')};
+  width: ${({ full }) => (full ? '100%' : 'auto')};
 
   [disabled] {
     cursor: progress;

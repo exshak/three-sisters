@@ -44,7 +44,7 @@ export const Search = styled.input`
     color: var(--black);
   }
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     margin-top: 1rem;
     position: relative;
     width: 100%;

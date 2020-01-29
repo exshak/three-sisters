@@ -22,7 +22,7 @@ export const Product = styled.div`
 export const Content = styled.div`
   /* padding: 0 2.5rem 2.5rem; */
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     padding-bottom: 2rem;
   }
 `

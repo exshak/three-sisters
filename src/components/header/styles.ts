@@ -20,7 +20,7 @@ const navLinks = keyframes`
   }
 `
 
-const active = css`
+const activeOpen = css`
   div {
     display: flex;
   }
@@ -31,7 +31,7 @@ const active = css`
   }
 `
 
-const subNav = css`
+const subNavOpen = css`
   span::after {
     top: calc(50% + 0.2rem);
     transform: translateY(-50%) rotate(-135deg);
@@ -44,16 +44,16 @@ const subNav = css`
   }
 `
 
-const subLink = css`
+const subLinkOpen = css`
   display: block;
   position: relative;
   width: 11rem;
 `
 
-const getLinkStyles = props => {
-  if (props.active) return active
-  if (props.subnav) return subNav
-  if (props.sublink) return subLink
+const getLinkStyles = ({ active, subnav, sublink }) => {
+  if (active) return activeOpen
+  if (subnav) return subNavOpen
+  if (sublink) return subLinkOpen
 }
 
 export const SiteHeader = styled.header`
@@ -67,18 +67,20 @@ export const SiteHeader = styled.header`
 
 export const SiteLogo = styled.div`
   left: calc(50% - 120px);
-  opacity: ${props => (props.scroll ? 0 : 1)};
+  opacity: ${({ scroll }) => (scroll ? 0 : 1)};
   position: absolute;
   top: 1rem;
   transition: opacity 1.5s ease, visibility 0.1s ease;
-  visibility: ${props => (props.scroll ? 'hidden' : 'visible')};
+  visibility: ${({ scroll }) => (scroll ? 'hidden' : 'visible')};
 
   img {
     height: 1.5rem;
   }
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     display: none;
+    opacity: 0;
+    visibility: hidden;
   }
 `
 
@@ -90,7 +92,7 @@ export const Nav = styled.nav`
   /* top: 0; */
   /* z-index: 2; */
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     ${getLinkStyles}
   }
 `
@@ -98,27 +100,42 @@ export const Nav = styled.nav`
 export const Container = styled.div`
   align-items: center;
   display: flex;
-  padding: ${props => (props.scroll ? '1rem 0 1rem' : '4rem 0 1rem')};
+  padding: ${({ scroll }) => (scroll ? '0.5rem 0 0.5rem' : '4rem 0 0.5rem')};
   transition: all 0.5s ease;
 
-  @media ${props => props.theme.breakpoints.tablet} {
-    padding: 1rem 0 1rem;
+  @media (max-width: 600px) {
+    padding: 0.5rem 0 0.5rem;
     transition: all 0s none;
   }
 `
 
 export const NavLogo = styled.div`
-  opacity: ${props => (props.scroll ? 1 : 0)};
+  opacity: ${({ scroll }) => (scroll ? 1 : 0)};
   transition: all 0.5s ease;
   width: 20%;
+
+  @media (max-width: 600px) {
+    opacity: 1;
+  }
 `
 
 export const Logo = styled.img`
+  width: auto;
+`
+
+export const LogoFull = styled.img`
   margin-right: 3rem;
   position: relative;
   width: 222px;
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 768px) {
+    margin-top: 0.2rem;
+    width: 150px;
+    z-index: 1;
+  }
+
+  @media (max-width: 600px) {
+    width: 200px;
     z-index: 1;
   }
 `
@@ -136,7 +153,11 @@ export const NavLinks = styled.div`
     margin-left: 1rem;
   }
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 768px) {
+    letter-spacing: 0rem;
+  }
+
+  @media (max-width: 600px) {
     align-items: center;
     animation: ${navLinks} 0.2s ease;
     background-color: var(--background);
@@ -164,7 +185,7 @@ export const Group = styled.div`
 
   ${getLinkStyles}
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     display: block !important;
 
     span {
@@ -206,7 +227,7 @@ export const GroupLinks = styled.div`
   transition: 0.3s ease all;
   width: auto;
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     background-color: var(--background);
     flex-direction: column;
     position: relative;
@@ -237,7 +258,11 @@ export const CustomLink = styled(Link)`
 
   ${getLinkStyles}
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 768px) {
+    padding: 0.5rem 0rem;
+  }
+
+  @media (max-width: 600px) {
     font-size: 1.5rem;
     font-weight: 300;
 
@@ -268,14 +293,12 @@ export const CustomLink = styled(Link)`
   }
 `
 
-export const Social = styled.div`
-  display: flex;
+export const Socials = styled.div`
   justify-content: flex-end;
-  list-style: none;
   position: absolute;
   right: 0;
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     justify-content: center;
     position: relative;
   }
@@ -297,7 +320,7 @@ export const Button = styled.button`
     width: 20px;
   }
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     display: block !important;
     margin-left: auto;
     z-index: 1;

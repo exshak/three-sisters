@@ -8,7 +8,7 @@ const Instagram = ({ title, instagram }) => (
     <Title>{title}</Title>
     {instagram && instagram.edges.length > 0 && (
       <Container>
-        {instagram.edges.map(({ node: { id, original } }) => (
+        {instagram.edges.map(({ node: { id, caption, original } }) => (
           <StyledLink
             key={id}
             target="_blank"
@@ -16,7 +16,13 @@ const Instagram = ({ title, instagram }) => (
             aria-label="Instagram Post Link"
             href={`https://instagram.com/p/${id}`}
           >
-            <Image src={original} alt={original} lazy background />
+            <Image
+              src={original}
+              alt={caption}
+              lazy
+              background
+              resolutions="small"
+            />
             <Overlay />
           </StyledLink>
         ))}

@@ -3,8 +3,7 @@ import { Link } from 'gatsby'
 import React, { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import LogoSVG from '../../assets/icons/logo-full.svg'
-import { SiteMetadata } from '../common/siteMetadata'
-import SocialLink from '../common/socialLink'
+import SocialMedia from '../common/socialMedia'
 import {
   Button,
   Container,
@@ -12,15 +11,14 @@ import {
   Group,
   GroupLinks,
   GroupParent,
-  Logo,
+  LogoFull,
   Nav,
   NavLinks,
   NavLogo,
-  Social,
+  Socials,
 } from './styles'
 
-const NavBar = ({ scroll, subNav }) => {
-  const { title, social } = SiteMetadata()
+const NavBar = ({ scroll, subNav, title }) => {
   const [active, setActive] = useState(false)
   const [activeSubNav, setActiveSubNav] = useState('')
 
@@ -47,7 +45,7 @@ const NavBar = ({ scroll, subNav }) => {
       <Container scroll={scroll}>
         <NavLogo scroll={scroll}>
           <Link to="/" onClick={handleLinkClick}>
-            <Logo src={LogoSVG} alt={title} />
+            <LogoFull src={LogoSVG} alt={title} />
           </Link>
         </NavLogo>
         <NavLinks>
@@ -69,11 +67,9 @@ const NavBar = ({ scroll, subNav }) => {
           </Group>
           <NavLink to="/about/">About</NavLink>
           <NavLink to="/contact/">Contact</NavLink>
-          <Social>
-            {social.map((link, i) => (
-              <SocialLink key={link.site + i} {...link} />
-            ))}
-          </Social>
+          <Socials>
+            <SocialMedia />
+          </Socials>
         </NavLinks>
         <Button onClick={handleMenuToggle}>
           {active ? <FaTimes /> : <FaBars />}
@@ -83,8 +79,10 @@ const NavBar = ({ scroll, subNav }) => {
   )
 }
 
-export default ({ scroll, subNav }) => (
+export default ({ scroll, subNav, title }) => (
   <Location>
-    {route => <NavBar scroll={scroll} subNav={subNav} {...route} />}
+    {route => (
+      <NavBar scroll={scroll} subNav={subNav} title={title} {...route} />
+    )}
   </Location>
 )

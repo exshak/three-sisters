@@ -10,11 +10,16 @@ import { Collection, Meta, Title } from './styles'
 // Export Template for use in CMS preview
 export const ProductTemplate = ({
   id,
-  oneProduct,
+  title,
+  price,
+  body,
+  featuredImage,
+  galleryImages,
   collections = [],
   allProducts = [],
 }) => {
-  const collection = collections[0].collection
+  const singleProduct = { title, price, body, featuredImage, galleryImages }
+  const collection = collections && collections[0] && collections[0].collection
   const filteredProducts =
     allProducts && !!allProducts.length
       ? byCollection(byDate(allProducts), collection, 'collections').filter(
@@ -24,9 +29,9 @@ export const ProductTemplate = ({
 
   return (
     <Fragment>
-      {!!oneProduct && (
+      {!!singleProduct && (
         <Container borderless thin>
-          {!!collections.length && (
+          {!!collections && (
             <Meta>
               {collections.map(({ collection }, i) => (
                 <span key={collection + i}>
@@ -36,7 +41,7 @@ export const ProductTemplate = ({
               ))}
             </Meta>
           )}
-          <ProductInfo {...oneProduct} />
+          <ProductInfo {...singleProduct} />
         </Container>
       )}
 
@@ -59,8 +64,7 @@ const Product = ({ data: { product, allProducts } }) => (
   <Layout meta={product.frontmatter.meta.title || product.frontmatter.title}>
     <ProductTemplate
       {...product}
-      oneProduct={product.frontmatter}
-      collections={product.frontmatter.collections}
+      {...product.frontmatter}
       allProducts={allProducts.edges.map(({ node }) => ({
         ...node,
         ...node.fields,
@@ -92,7 +96,10 @@ export const pageQuery = graphql`
     }
 
     allProducts: allMarkdownRemark(
-      filter: { fields: { contentType: { eq: "products" } } }
+      filter: {
+        fields: { contentType: { eq: "products" } }
+        frontmatter: { status: { eq: "Published" } }
+      }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {

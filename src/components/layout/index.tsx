@@ -5,9 +5,9 @@ import React from 'react'
 import { SiteMetadata } from '../common/siteMetadata'
 import Footer from '../footer'
 import Header from '../header'
+import './cms.css'
 import SEO from './seo'
 import { globalStyle, Main, theme } from './styles'
-import './test.css'
 
 const Layout = ({ meta, children }) => {
   const { title } = SiteMetadata()

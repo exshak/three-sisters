@@ -1,4 +1,5 @@
 import { serialize } from 'dom-form-serializer'
+import PropTypes from 'prop-types'
 import { stringify } from 'qs'
 import React, { useState } from 'react'
 import Slider from 'react-slick/lib/slider'
@@ -53,7 +54,6 @@ const ProductInfo = ({
       return <img src={productGallery[i]} style={thumbnail} />
     },
   }
-  console.log(productGallery)
 
   return (
     <Grid>
@@ -133,6 +133,13 @@ const thumbnail = {
   height: 125,
   margin: '0 18px 10px 0',
   width: 125,
+}
+
+ProductInfo.propTypes = {
+  title: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  featuredImage: PropTypes.string.isRequired,
+  galleryImages: PropTypes.array.isRequired,
 }
 
 export default ProductInfo

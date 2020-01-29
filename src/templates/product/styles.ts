@@ -22,7 +22,7 @@ export const Collection = styled.div`
   grid-template-columns: repeat(4, 1fr);
   margin: 1rem 0rem;
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     grid-gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
 

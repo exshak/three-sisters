@@ -35,10 +35,6 @@ body {
   max-width: 1280px;
   padding: 20px 30px;
   -webkit-font-smoothing: antialiased;
-
-  @media (max-width: 600px) {
-    padding: 0 20px;
-  }
 }
 
 a {
@@ -72,4 +68,10 @@ h6 {
 
 .slick-slide div {
   height: 400px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 20px;
+  }
 }

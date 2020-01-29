@@ -9,7 +9,7 @@ export const Grid = styled.div`
     width: calc(50% - 1rem);
   }
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     align-items: center;
     flex-direction: column;
 
@@ -36,7 +36,7 @@ export const Gallery = styled.div`
     width: auto;
   }
 
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
     .slick-slide div {
       height: 400px;
     }
@@ -58,7 +58,7 @@ export const Gallery = styled.div`
 `
 
 export const Info = styled.div`
-  @media ${props => props.theme.breakpoints.tablet} {
+  @media (max-width: 600px) {
   }
 `
 

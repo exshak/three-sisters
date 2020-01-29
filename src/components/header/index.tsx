@@ -59,7 +59,7 @@ const Header = ({ siteTitle }) => {
           <Logo src={LogoSVG} alt={siteTitle} />
         </Link>
       </SiteLogo>
-      <NavBar scroll={navbarCollapse} subNav={subNav} />
+      <NavBar scroll={navbarCollapse} subNav={subNav} title={siteTitle} />
     </SiteHeader>
   )
 }

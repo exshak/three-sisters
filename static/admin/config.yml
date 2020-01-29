@@ -6,12 +6,12 @@ media_library:
   name: uploadcare
   config:
     publicKey: f8f360c9efdce53e4af8
-    multiple: false
-    tabs: file camera url facebook gdrive
-    effects: crop,rotate,enhance,grayscale
     imageShrink: 2000x2000
     previewStep: true
     clearable: true
+  settings:
+    autoFilename: true
+    # defaultOperations: /resize/800x600/
 
 # prettier-ignore
 collections:

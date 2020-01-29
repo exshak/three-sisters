@@ -89,7 +89,10 @@ export const pageQuery = graphql`
     }
 
     products: allMarkdownRemark(
-      filter: { fields: { contentType: { eq: "products" } } }
+      filter: {
+        fields: { contentType: { eq: "products" } }
+        frontmatter: { status: { eq: "Published" } }
+      }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
