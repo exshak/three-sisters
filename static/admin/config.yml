@@ -114,13 +114,20 @@ collections:
         widget: list
         required: false
         fields:
-          - { label: Image, name: image, widget: image }
+          - { label: Gallery Image, name: galleryImage, widget: image }
       - label: Collections
         name: collections
         widget: list
         fields:
           - { label: Collection, name: collection, widget: relation, collection: collections, searchFields: [title], valueField: title }
       - { label: Status, name: status, widget: select, options: [Published, Featured, Draft], default: Published }
+      - label: Meta
+        name: meta
+        widget: object
+        required: false
+        fields:
+          - { label: Title, name: title, widget: string, default: '', required: false }
+          - { label: Description, name: description, widget: text, default: '', required: false }
 
   - label: Collections
     name: collections

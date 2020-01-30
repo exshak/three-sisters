@@ -14,7 +14,7 @@ export const ProductTemplate = ({
   price,
   body,
   featuredImage,
-  galleryImages,
+  galleryImages = [],
   collections = [],
   allProducts = [],
 }) => {
@@ -89,7 +89,9 @@ export const pageQuery = graphql`
         title
         price
         featuredImage
-        galleryImages
+        galleryImages {
+          galleryImage
+        }
         collections {
           collection
         }
