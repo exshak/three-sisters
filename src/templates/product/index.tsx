@@ -65,6 +65,7 @@ const Product = ({ data: { product, allProducts } }) => (
     <ProductTemplate
       {...product}
       {...product.frontmatter}
+      body={product.html}
       allProducts={allProducts.edges.map(({ node }) => ({
         ...node,
         ...node.fields,
@@ -80,13 +81,13 @@ export const pageQuery = graphql`
   query Product($id: String!) {
     product: markdownRemark(id: { eq: $id }) {
       ...Meta
+      html
       id
       frontmatter {
         template
         date
         title
         price
-        body
         featuredImage
         galleryImages
         collections {

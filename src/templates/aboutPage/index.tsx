@@ -16,7 +16,7 @@ export const AboutPageTemplate = ({ title, body }) => (
 // Export Default AboutPage for front-end
 const AboutPage = ({ data: { page } }) => (
   <Layout meta={page.frontmatter.meta.title || page.frontmatter.title}>
-    <AboutPageTemplate {...page.frontmatter} />
+    <AboutPageTemplate {...page.frontmatter} body={page.html} />
   </Layout>
 )
 
@@ -26,10 +26,10 @@ export const pageQuery = graphql`
   query AboutPage($id: String!) {
     page: markdownRemark(id: { eq: $id }) {
       ...Meta
+      html
       frontmatter {
         template
         title
-        body
       }
     }
   }

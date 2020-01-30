@@ -76,9 +76,9 @@ export const globalStyle = css`
   h4,
   h5,
   h6 {
+    font-weight: 500;
     margin: 0;
     margin-bottom: 0.5em;
-    font-weight: 500;
   }
 
   ::selection {

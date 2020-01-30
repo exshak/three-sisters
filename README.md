@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/badge/cdn-uploadcare-00cc99.svg" alt="cdn: uploadcare"/>
   </a>
   <a href="https://app.netlify.com/sites/threesisters/deploys">
-    <img src="https://api.netlify.com/api/v1/badges/a793b103-cacf-4624-8de6-864fa29ba446/deploy-status" alt="netlify: status"/>
+    <img src="https://api.netlify.com/api/v1/badges/e7199e76-4199-4f5a-90bd-b12c5693bd5f/deploy-status" alt="netlify: status"/>
   </a>
 </p>
 

@@ -10,7 +10,7 @@ media_library:
     previewStep: true
     clearable: true
   settings:
-    autoFilename: true
+    autoFilename: false
     # defaultOperations: /resize/800x600/
 
 # prettier-ignore
@@ -107,13 +107,17 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Price, name: price, widget: string, default: '$10.00 CAD' }
       - { label: Body, name: body, widget: markdown }
-      - { label: Description, name: description, widget: text }
+      # - { label: Description, name: description, widget: text }
       - { label: Featured Image, name: featuredImage, widget: image }
-      - { label: Gallery Images, name: galleryImages, widget: image, multiple: true }
+      - label: Gallery Images
+        name: galleryImages
+        widget: list
+        required: false
+        fields:
+          - { label: Image, name: image, widget: image }
       - label: Collections
         name: collections
         widget: list
-        required: false
         fields:
           - { label: Collection, name: collection, widget: relation, collection: collections, searchFields: [title], valueField: title }
       - { label: Status, name: status, widget: select, options: [Published, Featured, Draft], default: Published }

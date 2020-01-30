@@ -9,6 +9,7 @@ import Layout from '../../components/layout'
 
 // Export Template for use in CMS preview
 export const HomePageTemplate = ({
+  body,
   carousel,
   featuredTitle,
   featured,
@@ -36,7 +37,12 @@ export const HomePageTemplate = ({
 // Export Default HomePage for front-end
 const HomePage = ({ data: { page, instagram } }) => (
   <Layout meta={page.frontmatter.meta.title || page.frontmatter.title}>
-    <HomePageTemplate {...page} {...page.frontmatter} instagram={instagram} />
+    <HomePageTemplate
+      {...page}
+      {...page.frontmatter}
+      body={page.html}
+      instagram={instagram}
+    />
   </Layout>
 )
 
@@ -46,6 +52,7 @@ export const pageQuery = graphql`
   query HomePage($id: String!) {
     page: markdownRemark(id: { eq: $id }) {
       ...Meta
+      html
       frontmatter {
         template
         title
