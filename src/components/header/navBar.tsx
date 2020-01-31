@@ -71,7 +71,7 @@ const NavBar = ({ scroll, subNav, title }) => {
             <SocialMedia />
           </Socials>
         </NavLinks>
-        <Button onClick={handleMenuToggle}>
+        <Button aria-label="Toggle NavBar" onClick={handleMenuToggle}>
           {active ? <FaTimes /> : <FaBars />}
         </Button>
       </Container>

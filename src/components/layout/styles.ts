@@ -11,7 +11,7 @@ export const theme = {
   colors: {
     main: '#00c2bd',
     text: '#222222',
-    background: '#fbfbfb',
+    background: '#ffffff',
     teal: '#00c2bd',
   },
 }
