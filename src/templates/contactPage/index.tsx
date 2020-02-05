@@ -1,20 +1,27 @@
 import { graphql } from 'gatsby'
 import React, { Fragment } from 'react'
 import Container from '../../components/common/container'
-import Content from '../../components/common/content'
+import Image from '../../components/common/image'
+import ContactForm from '../../components/contactForm'
 import Layout from '../../components/layout'
-import { Contact, Details, Form, Title } from './styles'
+import { Contact, Details, Title } from './styles'
 
 // Export Template for use in CMS preview
-export const ContactPageTemplate = ({ title, body }) => (
+export const ContactPageTemplate = ({ title, body, featuredImage }) => (
   <Fragment>
     <Container skinny>
+      <Title>{title}</Title>
       <Contact>
         <Details>
-          <Title>{title}</Title>
-          <Content source={body} />
+          <Image
+            src={featuredImage}
+            alt={title}
+            background
+            size="cover"
+            resolutions="small"
+          />
         </Details>
-        <Form />
+        <ContactForm title={title} body={body} />
       </Contact>
     </Container>
   </Fragment>
@@ -37,6 +44,7 @@ export const pageQuery = graphql`
       frontmatter {
         template
         title
+        featuredImage
       }
     }
   }

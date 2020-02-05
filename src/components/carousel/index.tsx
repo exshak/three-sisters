@@ -4,6 +4,7 @@ import Slider from 'react-slick/lib/slider'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import Image from '../common/image'
+import { Container, StickyLogo } from './styles'
 
 const Carousel = ({ carousel }) => {
   const settings = {
@@ -20,18 +21,28 @@ const Carousel = ({ carousel }) => {
   }
 
   return (
-    <Slider {...settings}>
-      {carousel.map(({ image, alt }, i) => (
+    <Container>
+      <Slider {...settings}>
+        {carousel.map(({ image, alt }, i) => (
+          <Image
+            key={alt + i}
+            src={image}
+            alt={alt}
+            background
+            size="cover"
+            resolutions="large"
+          />
+        ))}
+      </Slider>
+      <StickyLogo>
         <Image
-          key={alt + i}
-          src={image}
-          alt={alt}
+          src="https://ucarecdn.com/bd824d9a-8be4-4d23-b232-d5c87bba744e/"
+          alt="Carousel Logo"
           background
-          size="cover"
-          resolutions="large"
+          resolutions="small"
         />
-      ))}
-    </Slider>
+      </StickyLogo>
+    </Container>
   )
 }
 

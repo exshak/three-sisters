@@ -20,7 +20,7 @@ export const HomePageTemplate = ({
   <Fragment>
     <Carousel carousel={carousel} />
 
-    <Container>
+    <Container shorter>
       <Featured title={featuredTitle} featured={featured} />
     </Container>
 

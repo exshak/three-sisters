@@ -2,7 +2,13 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 export const Title = styled.h2`
+  font-family: 'Allura', cursive;
+  font-size: 3rem;
   text-align: center;
+
+  @media screen and (max-width: 600px) {
+    margin: 1rem 0;
+  }
 `
 
 export const Container = styled.div`

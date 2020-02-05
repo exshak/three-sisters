@@ -70,6 +70,5 @@ yarn-error.log
 
 # Extra
 .prettierignore
-gatsby-browser.js
 gatsby-ssr.js
 layout.css

@@ -9,7 +9,7 @@ module.exports = {
   backgroundColor: '#f7f7f7',
   themeColor: '#efdbca',
   favicon: 'src/assets/icons/favicon.png',
-  siteLogo: '',
+  siteLogo: 'src/assets/icons/logo.svg',
   googleAnalyticsID: 'UA-XXXXXXXX-X',
   siteContact: {
     address: '',

@@ -55,7 +55,7 @@ export const globalStyle = css`
     padding: 20px 30px;
     -webkit-font-smoothing: antialiased;
 
-    @media ${theme.breakpoints.tablet} {
+    @media (max-width: 600px) {
       padding: 0 20px;
     }
   }
@@ -86,7 +86,8 @@ export const globalStyle = css`
   }
 
   .active {
-    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-position: under !important;
   }
 
   .slick-slide div {

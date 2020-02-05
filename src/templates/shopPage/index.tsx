@@ -36,7 +36,7 @@ export const ShopPageTemplate = ({
       return (
         <Fragment>
           {!!collections.length && (
-            <Container borderless thin>
+            <Container borderless short>
               <ShopNav collections={collections} enableSearch />
             </Container>
           )}

@@ -1,16 +1,28 @@
 import styled from '@emotion/styled'
 import { graphql } from 'gatsby'
-import React from 'react'
+import React, { Fragment } from 'react'
 import Container from '../../components/common/container'
 import Content from '../../components/common/content'
+import Image from '../../components/common/image'
 import Layout from '../../components/layout'
 
 // Export Template for use in CMS preview
-export const AboutPageTemplate = ({ title, body }) => (
-  <Container skinny>
-    <Title>{title}</Title>
-    <Content source={body} />
-  </Container>
+export const AboutPageTemplate = ({ title, body, featuredImage }) => (
+  <Fragment>
+    <Container center skinny>
+      <Title>{title}</Title>
+      <Logo>
+        <Image
+          src={featuredImage}
+          alt={title}
+          background
+          size="cover"
+          resolutions="small"
+        />
+      </Logo>
+      <Content source={body} />
+    </Container>
+  </Fragment>
 )
 
 // Export Default AboutPage for front-end
@@ -30,6 +42,7 @@ export const pageQuery = graphql`
       frontmatter {
         template
         title
+        featuredImage
       }
     }
   }
@@ -37,4 +50,10 @@ export const pageQuery = graphql`
 
 const Title = styled.h1`
   text-align: center;
+`
+
+const Logo = styled.div`
+  height: 20rem;
+  position: relative;
+  width: 20rem;
 `

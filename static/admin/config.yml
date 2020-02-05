@@ -72,6 +72,7 @@ collections:
           - { label: Slug, name: slug, widget: hidden, default: about }
           - { label: Title, name: title, widget: string }
           - { label: Body, name: body, widget: markdown }
+          - { label: Featured Image, name: featuredImage, widget: image }
           - label: Meta
             name: meta
             widget: object

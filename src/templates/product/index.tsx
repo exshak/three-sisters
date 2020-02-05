@@ -30,7 +30,7 @@ export const ProductTemplate = ({
   return (
     <Fragment>
       {!!singleProduct && (
-        <Container borderless thin>
+        <Container borderless short>
           {!!collections && (
             <Meta>
               {collections.map(({ collection }, i) => (

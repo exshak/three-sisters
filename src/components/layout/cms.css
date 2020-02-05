@@ -63,7 +63,8 @@ h6 {
 }
 
 .active {
-  font-weight: 600 !important;
+  text-decoration: underline !important;
+  text-underline-position: under !important;
 }
 
 .slick-slide div {
