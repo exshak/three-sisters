@@ -45,10 +45,9 @@ const ProductInfo = ({
     }
   }
 
-  const productGallery = [
-    featuredImage,
-    ...galleryImages.map(({ galleryImage }) => galleryImage),
-  ]
+  const productGallery = galleryImages
+    ? [featuredImage, ...galleryImages.map(({ galleryImage }) => galleryImage)]
+    : [featuredImage]
   const settings = {
     dots: true,
     fade: true,
