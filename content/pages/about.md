@@ -4,7 +4,7 @@ slug: about
 title: About Us
 featuredImage: https://ucarecdn.com/353cd17c-f9fc-46a0-b4ac-96d22febc17a/
 meta:
-  title: About Us
+  title: About
   description: About Us
 ---
 

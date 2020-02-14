@@ -4,7 +4,7 @@ slug: contact
 title: Contact Us
 featuredImage: https://ucarecdn.com/817d26ed-c8b6-454d-9caf-60d0a00919a6/
 meta:
-  title: Contact Us
+  title: Contact
   description: Contact Us
 ---
 

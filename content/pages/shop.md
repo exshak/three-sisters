@@ -3,6 +3,6 @@ template: shopPage
 slug: shop
 title: Shop Page
 meta:
-  title: Shop Page
+  title: Shop
   description: Shop Page
 ---
